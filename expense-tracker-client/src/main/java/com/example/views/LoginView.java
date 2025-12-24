@@ -32,10 +32,16 @@ public class LoginView {
         VBox mainContainerBox = new VBox();
         mainContainerBox.getStyleClass().add("main-background");
 
-        VBox loginFormBox = new VBox();
-        loginFormBox.getChildren().addAll(usernameField, passwordField, loginButton, signupLabel);
+        VBox loginFormBox = getLoginFormBox();
 
         mainContainerBox.getChildren().addAll(expenseTrackerLabel, loginFormBox);
         return new Scene(mainContainerBox, Utility.APP_WIDTH, Utility.APP_HEIGHT);
+    }
+
+    private VBox getLoginFormBox() {
+        VBox loginFormBox = new VBox();
+        loginFormBox.getChildren().addAll(usernameField, passwordField, loginButton, signupLabel);
+
+        return loginFormBox;
     }
 }
