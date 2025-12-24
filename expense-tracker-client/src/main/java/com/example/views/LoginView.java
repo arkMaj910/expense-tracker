@@ -9,6 +9,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
+import java.util.Objects;
+
 public class LoginView {
     private Label expenseTrackerLabel = new Label("Expense Tracker");
     private TextField usernameField = new TextField();
@@ -18,11 +20,17 @@ public class LoginView {
 
     public void show() {
         Scene scene = createScene();
+        scene.getStylesheets().add(
+                Objects.requireNonNull(
+                        getClass().getResource("/style.css")
+                ).toExternalForm());
+
         ViewNavigator.switchViews(scene);
     }
 
     private Scene createScene() {
         VBox mainContainerBox = new VBox();
+        mainContainerBox.getStyleClass().add("main-background");
 
         VBox loginFormBox = new VBox();
         loginFormBox.getChildren().addAll(usernameField, passwordField, loginButton, signupLabel);
