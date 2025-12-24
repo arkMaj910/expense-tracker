@@ -1,5 +1,6 @@
 package com.example.views;
 
+import com.example.utils.Utility;
 import com.example.utils.ViewNavigator;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,6 +28,6 @@ public class LoginView {
         loginFormBox.getChildren().addAll(usernameField, passwordField, loginButton, signupLabel);
 
         mainContainerBox.getChildren().addAll(expenseTrackerLabel, loginFormBox);
-        return new Scene(mainContainerBox, 500, 500);
+        return new Scene(mainContainerBox, Utility.APP_WIDTH, Utility.APP_HEIGHT);
     }
 }
