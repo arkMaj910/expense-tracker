@@ -15,18 +15,13 @@ public class LoginView {
     private Button loginButton = new Button("Login");
     private Label signupLabel = new Label("Don't have an account? Click here");
 
-    public void show() {
+    public void show(){
         Scene scene = createScene();
         ViewNavigator.switchViews(scene);
     }
 
-    private Scene createScene() {
-        VBox mainContainerBox = new VBox();
-
-        VBox loginFormBox = new VBox();
-        loginFormBox.getChildren().addAll(usernameField, passwordField, loginButton, signupLabel);
-
-        mainContainerBox.getChildren().addAll(expenseTrackerLabel, loginFormBox);
-        return new Scene(mainContainerBox, 500, 500);
+    private Scene createScene(){
+        VBox vBox = new VBox();
+        return new Scene(vBox, 100, 100);
     }
 }
